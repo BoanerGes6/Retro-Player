@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #9BB3BF;
+}
+.navContainer {
+	background-color: white;
+	height: 80px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.logo {
+	width: 200px;
+	height: 80px;
+	background-image: url("/images/logo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.profile {
+	font-size: 30px;
+	position: relative;
+	left: 80%;
+	display: flex;
+	align-items: flex-end;
+	gap: 25px;
+	height: 60px;
+}
+.profile span {
+	cursor: pointer;
+	color: gray;
+	transition: color 0.3s ease-in-out;
+}
+.profile span:hover {
+	color: black;
+}
+.container {
+	display: flex;
+	align-items: flex-end;
+	
+}
+.container img {
+	width: 500px;
+	margin: 50px;
+	margin-left: 100px;
+	margin-bottom: 0;
+	box-shadow: 10px 10px 15px rgba(0,0,0,0.7);
+}
+.about-us {
+	width: 700px;
+	height: 250px;	
+}
+
+.about-us fieldset {
+	border-width: 5px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	border-color: black;
+}
+.about-us fieldset p {
+	font-size: 16px;
+	font-weight: 400;
+	word-spacing: 5px;
+	text-indent: 100px;
+}
+.footer {
+	margin-top: 20px;
+	padding: 40px;
+	background-color: white;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	display: flex;
+	flex-direction: row;
+}
+.footer ul {
+	font-size: 14px;
+}
+.footer ul li {
+	padding: 2px;
+}
+.why {
+	width: 800px;
+	height: 150px;
+	border-right: 2px solid lightgray;
+}
+.conduct-us {
+	height: 150px;
+	padding-left: 80px;
+}
+.conduct-us div {
+	font-size: 14px;
+}

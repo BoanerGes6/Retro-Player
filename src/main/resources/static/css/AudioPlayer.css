@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.container {
+	display: flex;
+	align-items: center;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.audioImage {
+	background-image: url("/images/audio.png");
+	background-repeat: no-repeat;
+	width: 305px;
+	height: 620px;
+	background-size: contain;
+	margin-right: 0;
+}
+.player-module {
+	width: 550px;
+	height: 620px;
+}
+.songs-container {
+	border: 1px solid black; /* Need to Remove */
+	width: 300px;
+	height: 620px;
+}
+.songs-container input {
+	width: 200px;
+	height: 20px;
+	padding: 2px;
+	margin-left: 30px;
+	margin-top: 10px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+.songs-container input:focus {
+	outline: none;
+}
+.songs-container button {
+	height: 26px;
+	width: 30px;
+	background-color: transparent;
+	border: 1px solid black;
+	border-radius: 5px;
+	color: gray;
+	transition: color 0.3s ease-in-out;
+}
+.songs-container button:hover {
+	color: black;
+}
