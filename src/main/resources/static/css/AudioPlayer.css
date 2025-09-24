@@ -51,3 +51,9 @@ body {
 .songs-container button:hover {
 	color: black;
 }
+.songs-list {
+	border: 2px solid red;
+	width: 290px;
+	height: 560px;
+	margin-top: 15px;
+}

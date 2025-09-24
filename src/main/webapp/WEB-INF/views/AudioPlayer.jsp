@@ -25,13 +25,20 @@
 			</audio>
 		</div>
 		<div class="songs-container">
-			<form>
+			<form id="search-audio">
 				<div>
-					<input type="text" id="search">
+					<input type="text" id="song-name">
 					<button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+				</div>
+				<div id="songs-list" class="songs-list">
+					<table class="all-songs-table">
+						<thead></thead>
+						<tbody id="all-songs"></tbody>
+					</table>
 				</div>
 			</form>
 		</div>
 	</div>
+	<script type="text/javascript" src="/js/audio.js"></script>
 </body>
 </html>

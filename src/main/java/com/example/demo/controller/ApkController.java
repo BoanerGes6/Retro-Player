@@ -11,6 +11,11 @@ public class ApkController {
 		return "index";
 	}
 	
+	@GetMapping("/Admin")
+	public String admin() {
+		return "Admin";
+	}
+	
 	@GetMapping("/AudioPlayer")
 	public String AudioPlayer() {
 		return "AudioPlayer";
