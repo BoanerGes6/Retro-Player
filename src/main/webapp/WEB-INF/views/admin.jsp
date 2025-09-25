@@ -11,6 +11,7 @@
 		<div>
 			<input type="file" id="inputFile">
 			<input type="file" id="inputImage" accept="image/*">
+			<input type ="text" id="language">
 			<button type="submit">Upload</button>
 		</div>
 	</form>

@@ -4,10 +4,12 @@ body {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
+	background-color: #171717;
 }
 .container {
 	display: flex;
-	align-items: center;
+	flex-direction: row;
+	
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .audioImage {
@@ -21,11 +23,23 @@ body {
 .player-module {
 	width: 550px;
 	height: 620px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: #1F1E1E;
 }
-.songs-container {
-	border: 1px solid black; /* Need to Remove */
-	width: 300px;
-	height: 620px;
+.audioCover {
+	border: 1px solid white;
+	width: 400px;
+	height: 400px;
+	margin: 30px;
+}
+.search-audio {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;	
+	gap: 5px;
 }
 .songs-container input {
 	width: 200px;
@@ -39,21 +53,86 @@ body {
 .songs-container input:focus {
 	outline: none;
 }
-.songs-container button {
+.songs-container .search-btn {
 	height: 26px;
 	width: 30px;
 	background-color: transparent;
-	border: 1px solid black;
+	border: 1.5px solid gray;
 	border-radius: 5px;
 	color: gray;
-	transition: color 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
-.songs-container button:hover {
-	color: black;
+.songs-container .search-btn:hover {
+	color: white;
+	border: 1.5px solid white;
 }
 .songs-list {
-	border: 2px solid red;
-	width: 290px;
+	width: 310px;
 	height: 560px;
 	margin-top: 15px;
+	overflow-x: auto; 
+}
+
+.songs-list::-webkit-scrollbar {
+	width: 6px;
+}
+.songs-list::-weblit-scrollbar-track {
+	background: #171717;
+}
+.songs-list::-webkit-scrollbar-thumb {
+	background-color: #3B3A3A;
+	border-radius: 10px;
+}
+
+.all-songs-table {
+    width: 290px;           /* full width of container */
+    height: 50px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td {
+	padding: 0;
+}
+
+.song-btn {
+	width: 290px;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	padding: 8px;
+	gap: 8px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 16px;
+	align-items: flex-end;
+	justify-content: flex-start;
+	overflow: hidden;
+	background-color: #171717;
+	color: white;
+	border: none;
+	transition: color 0.3s ease-in-out;
+}
+
+.song-btn:hover {
+	color: lightgray;
+}
+.song-btnV2 {
+	color: #079C3E;
+}
+
+.song-btn div:first-child {
+	width: 50px;
+	height: 50px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	border-radius: 5px;
+	margin-left: 4px;
+	pointer-events: none;
+}
+.song-btn div:last-child {
+	padding: 10px 5px;
+	white-space: nowrap;
+	width: 210px;
+	overflow: hidden;
+	text-align: left;
+	pointer-events: none;
 }

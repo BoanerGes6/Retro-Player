@@ -20,15 +20,20 @@
 	<div class="container">
 		<div class="audioImage"></div>
 		<div class="player-module">
-			<audio controls>
-				<source id="source">
-			</audio>
+			<div class="audioCover"></div>
+			<div class="audio-player">
+				<audio id="audio"></audio>
+				
+				<button id="backward"></button>
+				<button id="play-pause"></button>
+				<button id="forward"></button>
+			</div>
 		</div>
 		<div class="songs-container">
 			<form id="search-audio">
-				<div>
+				<div class="search-audio">
 					<input type="text" id="song-name">
-					<button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+					<button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
 				</div>
 				<div id="songs-list" class="songs-list">
 					<table class="all-songs-table">

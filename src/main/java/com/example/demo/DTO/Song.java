@@ -16,6 +16,7 @@ public class Song {
 	private String songName;
 	private String imagePath;
 	private String imageName;
+	private String album;
 	private String songLanguage;
 	private String timestamp;
 	
@@ -60,6 +61,12 @@ public class Song {
 	}
 	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
+	}
+	public String getAlbum() {
+		return album;
+	}
+	public void setAlbum(String album) {
+		this.album = album;
 	}
 	
 }
