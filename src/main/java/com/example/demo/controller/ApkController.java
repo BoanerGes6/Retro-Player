@@ -20,4 +20,14 @@ public class ApkController {
 	public String AudioPlayer() {
 		return "AudioPlayer";
 	}
+	
+	@GetMapping("/Sign_up")
+	public String SignUp() {
+		return "Sign_up";
+	}
+	
+	@GetMapping("/Login")
+	public String logIn() {
+		return "Login";
+	}
 }

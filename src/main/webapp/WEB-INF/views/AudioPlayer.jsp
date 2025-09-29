@@ -20,13 +20,24 @@
 	<div class="container">
 		<div class="audioImage"></div>
 		<div class="player-module">
-			<div class="audioCover"></div>
+			<img class="audioCover" id="audioCover">
 			<div class="audio-player">
-				<audio id="audio"></audio>
+				<audio id="audio" ></audio>
 				
-				<button id="backward"></button>
-				<button id="play-pause"></button>
-				<button id="forward"></button>
+				<input type="range" id="progress" value="0" min="0" max="100">
+				<div id="time" class="time"><span id="time1">0:00</span> <span id="time2">0:00</span></div>
+				<div class="player-btn-container">
+					<button id="shuffle" class="player-btn shuffle-repeate"><i class="fa-solid fa-shuffle"></i></button>
+					<button id="backward" class="player-btn"><i class="fa-solid fa-backward"></i></button>
+					<button id="play-pause" class="player-btn pause-play"><i class="fa-solid fa-play" id="icon"></i></button>
+					<button id="forward" class="player-btn"><i class="fa-solid fa-forward"></i></button>
+					<button id="repeate" class="player-btn shuffle-repeate"><i class="fa-solid fa-repeat"></i></button>
+				</div>
+				
+				<div class="volume-container">
+					<i class="fa-solid fa-volume-high"></i>
+					<input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+				</div>
 			</div>
 		</div>
 		<div class="songs-container">

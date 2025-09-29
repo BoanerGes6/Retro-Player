@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -9,13 +8,16 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.DTO.Song;
+import com.example.demo.DTO.Users;
 import com.example.demo.service.AudioService;
+import com.example.demo.service.UserService;
 
 @RestController
 public class DataController {
@@ -35,6 +37,24 @@ public class DataController {
 		
 	}
 	
+	
+	/*-----------------------------Sign-In-------------------------------*/
+	
+	@Autowired
+	private UserService userService;
+	
+	@PostMapping("/signup")
+	public ResponseEntity<String> Signin(@RequestBody Users newUser) {
+		
+		return userService.saveUser(newUser);
+	}
+	
+	/*-------------------------------Log-In--------------------------------*/
+	@PostMapping("/login")
+	public ResponseEntity<Boolean> login(@RequestParam("email") String email, @RequestParam("password") String password) {
+		return userService.loginUser(email, password);
+	}
+	
 	@GetMapping("favicon.ico")
     @ResponseBody
     public void returnNoFavicon() {
@@ -50,7 +70,7 @@ public class DataController {
 	}
 	
 	@GetMapping("/selectedSongInfo")
-	public ResponseEntity<Song> selectedAudioInfo(@RequestParam("query") String audioName) {
+	public ResponseEntity<Resource> selectedAudioInfo(@RequestParam("query") String audioName) {
 		return audioService.selectedAudioInfo(audioName);
 	}
 	
@@ -58,6 +78,13 @@ public class DataController {
 	public ResponseEntity<Page<Song>> getAllAudio(Pageable pageable) {
 		
 		return audioService.allAudioSummaries(pageable);
+	}
+	
+	@GetMapping("/autoplayNextSong")
+	public void autoplayNextSong(@RequestParam("query") String currentAudio) {
+		
+		audioService.nxtSong(currentAudio);
+		return;
 	}
 	
 }

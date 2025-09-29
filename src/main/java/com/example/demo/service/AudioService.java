@@ -105,10 +105,28 @@ public class AudioService {
 		}
 		return ResponseEntity.badRequest().body(null);
 	}
-	public ResponseEntity<Song> selectedAudioInfo(String audioName) {
+	public ResponseEntity<Resource> selectedAudioInfo(String audioName) {
 		
 		Song songInfo = songRepo.fetchBySongName(audioName);
+		File file = new File(Upload_imageFile_Dir + songInfo.getImageName());
+		try {
+			InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
+			
+			if (songInfo.getImageName().endsWith(".jpg")) {
+				
+				return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(resource);
+			}else if (songInfo.getImageName().endsWith(".png")) {
+				return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG).body(resource);
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 		
-		return ResponseEntity.ok(songInfo);
+		return ResponseEntity.badRequest().body(null);
+	}
+	
+	public void nxtSong(String currentAudio) {
+		
 	}
 }
