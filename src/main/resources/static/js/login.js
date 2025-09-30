@@ -16,8 +16,10 @@ document.getElementById("login").addEventListener("submit", (event) => {
 	.then(response => response.json())
 	.then(data => {
 		console.log(data);	
-		if (data === true) {
+		if (data.success === true) {
 			console.log("Login Success");
+			window.location.href = `/AudioPlayer/${data.id}`;
+			
 		}else {
 			console.log("Invalid.");
 		}

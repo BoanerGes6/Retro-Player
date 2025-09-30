@@ -99,7 +99,18 @@ tableBody.addEventListener('click', function(event) {
 			audio.src = URL.createObjectURL(blob);
 			audio.play();
 			console.log("Duration this time : ", audio.duration);
+		});
+		
+		fetch("/lastPlayedSong?query=" + encodeURIComponent(selectedName), {
+			method: "GET",
+			    credentials: "include"   // <-- this is the key
 		})
+		.then(response => {
+			if (!response.ok) return;
+			return response.text();
+		})
+		.then(data => console.log(data))
+		.catch(err => alert(err.message));
 		
 		icon.classList.remove('fa-play');
 		icon.classList.add('fa-pause');
@@ -159,6 +170,7 @@ function updateProgressSlider() {
 	
 	slider.style.background = `linear-gradient(to right, #ff5722 0%, #ff5722 ${percentage}%, #ccc ${percentage}%, #ccc 100%)`;
 }
+
 function autoplayNextSong() {
 	if (audio.currentTime === audio.duration) {
 		/* slider.value = 0;

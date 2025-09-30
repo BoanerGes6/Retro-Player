@@ -20,7 +20,7 @@
 	<div class="container">
 		<div class="audioImage"></div>
 		<div class="player-module">
-			<img class="audioCover" id="audioCover">
+			<img class="audioCover" id="audioCover" alt="Audio Cover" src="/images/alterImg.png">
 			<div class="audio-player">
 				<audio id="audio" ></audio>
 				
