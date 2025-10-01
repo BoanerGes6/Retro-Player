@@ -26,6 +26,20 @@ window.addEventListener("DOMContentLoaded", () => {
 			tableRender(songs);
 		}
 	});
+	
+	fetch("/loadLastPlayed")
+	.then(response => response.blob())
+	.then(blob => {
+		audio.src = URL.createObjectURL(blob);
+	})
+	.catch(err => alert(err.message));
+	
+	fetch("/loadLastPlayedInfo")
+	.then(response => response.blob())
+	.then(blob => {
+		audioCover.src = URL.createObjectURL(blob);
+	})
+	.catch(err => alert(err.message))
 });
 
 document.getElementById("search-audio").addEventListener("submit", (event) => {
@@ -123,6 +137,23 @@ tableBody.addEventListener('click', function(event) {
 });
 
 // forward and backward
+document.addEventListener("keydown", (event) => {
+	if (event.key === "ArrowRight") {
+		if (!isNaN(audio.duration)) {
+			audio.currentTime = Math.min(audio.currentTime + 30.0, audio.duration);
+		}
+	}
+});
+
+document.addEventListener("keydown", (event) => {
+	if (event.key === "ArrowLeft") {
+		if (!isNaN(audio.duration)) {
+			audio.currentTime = Math.max(audio.currentTime - 30.0, 0);
+		}
+	}
+});
+
+// need to convert this button to move for the next song
 forwardBtn.addEventListener('click', () => {
 	if (!isNaN(audio.duration)) {
 		audio.currentTime = Math.min(audio.currentTime + 30.0, audio.duration);

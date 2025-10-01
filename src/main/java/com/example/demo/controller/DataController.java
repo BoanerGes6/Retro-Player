@@ -10,9 +10,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -74,6 +72,22 @@ public class DataController {
 		return ResponseEntity.ok(response);
 	}
 	
+	@GetMapping("/isLoggedIn")
+	public Map<String, Object> isLoggedIn(HttpSession session) {
+		Map<String, Object> response = new HashMap<>();
+		Object userId =  session.getAttribute("userId");
+		response.put("loggedIn", userId != null);
+		if (userId != null) response.put("userId", userId);
+		return response;
+	}
+	
+	@PostMapping("/logOut")
+	public ResponseEntity<String> logOut(HttpSession session) {
+		session.invalidate();
+		
+		return ResponseEntity.ok("Logged Out Success !!");
+	}
+	
 	/*-----------------------------Log-In Ends--------------------------------*/
 	
 	@GetMapping("favicon.ico")
@@ -107,7 +121,7 @@ public class DataController {
 		audioService.nxtSong(currentAudio);
 		return;
 	}
-	
+	// ----------------------Last Played song section ------------------------//
 	@GetMapping("/lastPlayedSong")
 	public ResponseEntity<String> lastPlayedSong(@RequestParam("query") String lastSong, 
 			HttpSession session) {
@@ -120,5 +134,10 @@ public class DataController {
 		return userService.lastPlayed(userId, lastSong);
 	}
 	
+	@GetMapping("/loadLastPlayed")
+	public void loadLastPlayed(HttpSession session) {
+		Long userId = (Long) session.getAttribute("userId");
+		userService.loadLastPlayedSong(userId);
+	}
 	
 }

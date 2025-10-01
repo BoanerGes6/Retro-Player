@@ -24,10 +24,10 @@ public class ApkController {
 		return "Admin";
 	}
 	
-	@GetMapping("/AudioPlayer")
-	public String AudioPlayer() {
-		return "AudioPlayer";
-	}
+//	@GetMapping("/AudioPlayer")
+//	public String AudioPlayer() {
+//		return "AudioPlayer";
+//	}
 	
 	@Autowired
 	private UserService userService;

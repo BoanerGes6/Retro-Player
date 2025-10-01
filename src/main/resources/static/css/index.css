@@ -93,3 +93,50 @@ body {
 .conduct-us div {
 	font-size: 14px;
 }
+
+.log-or-sign {
+	width: 100vw;
+	height: 100vh;
+	background: rgba(128, 128, 128, 0.5);  /* medium gray */
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.5s ease-in-out;
+}
+
+.logContainer {
+	width: 500px;
+	height: 200px;
+	background-color: white;
+	border-radius: 10px;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+}
+.logContainer div {
+	width: 220px;
+	height: 35px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.logContainer p {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 20px;
+}
+
+.signinBtn, .loginBtn {
+	width: 100px;
+	border-radius: 5px;
+	border: none;
+	background-color: rgb(113, 94, 162);
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 18px;
+	color: white;
+}

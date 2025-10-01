@@ -12,6 +12,7 @@
 <body>
 	<nav class="navContainer">
 		<div class="logo" onclick="window.location.href='/index'"></div>
+		<div class="userNameDisplay"><span>${userName}</span></div>
 		<div class="profile">
 			<span><i class="fa-solid fa-user-tie"></i></span>
 			<span><i class="fa-solid fa-arrow-right-to-bracket"></i></span>

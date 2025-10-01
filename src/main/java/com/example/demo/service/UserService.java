@@ -85,4 +85,12 @@ public class UserService {
 		}
 		return ResponseEntity.ok("Saved Success");
 	}
+	
+	public void loadLastPlayedSong(Long userId) {
+		Optional<Users> user = userRepo.findById(userId);
+		
+		if (!user.isPresent()) {
+			return;
+		}
+	}
 }

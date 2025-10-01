@@ -13,14 +13,14 @@
 		<div class="logo" onclick="window.location.href='/index'"></div>
 		<div class="profile">
 			<span><i class="fa-solid fa-user-tie"></i></span>
-			<span><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+			<span id="logOut"><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
 		</div>
 	</nav>
 	<div class="container">
 		<div>
 			<img usemap="#audioVideoMap" alt="No image found" src="/images/audio video.png">
 			<map id="audioVideoMap">
-				<area shape="rect" coords="0, 0, 250, 600" href="/AudioPlayer">
+				<area shape="rect" coords="0, 0, 250, 600" href="#" id="audioPlayerLink">
 				<area shape="rect" coords="250, 0, 500, 600" href="www.yahoo.com">
 			</map>
 		</div>
@@ -55,5 +55,18 @@
 			</div>
 		</div>
 	</footer>
+	
+	
+	<div class="log-or-sign" id="closeLogSignOpt">
+		<div class="logContainer">
+			<p>Hey! Welcome to Retro Player 🎵</p>
+			
+			<div>
+				<button type="button" class="signinBtn" onclick="window.location.href='/Sign_up'">Sign-In</button>
+				<button type="button" class="loginBtn" onclick="window.location.href='/Login'">Log-In</button>
+			</div>
+		</div>
+	</div>
+	<script src="/js/index.js"></script>
 </body>
 </html>

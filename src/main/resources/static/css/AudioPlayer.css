@@ -20,6 +20,20 @@ body {
 	background-size: contain;
 	margin-right: 0;
 }
+.profile {
+	left: 48% !important;
+}
+.userNameDisplay {
+	width : 500px;
+	height: 60px;
+	position: relative;
+	left: 47%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 24px;
+}
 .player-module {
 	width: 550px;
 	height: 620px;
@@ -215,6 +229,9 @@ td {
 }
 .song-btnV2 {
 	color: #079C3E;
+}
+.song-btnV2:focus {
+	outline: none;
 }
 
 .song-btn div:first-child {
